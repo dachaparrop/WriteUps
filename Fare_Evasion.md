@@ -1,11 +1,12 @@
-# [Bad_Worker] <ChallengeName>
-## Author: kaki005 <AuthorName>
+# [Fare Evasion] <ChallengeName>
+## Author: Louis <AuthorName>
 ### Points: 138 <points>
 
 ### Context
 
-We created a web application that works offline.
-https://web-bad-worker-lz56g6.wanictf.org
+SIGPwny Transit Authority needs your fares, but the system is acting a tad odd. We'll let you sign your tickets this time!
+
+https://fare-evasion.chal.uiuc.tf/
 
 
 ### Solution
