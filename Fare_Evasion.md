@@ -11,24 +11,20 @@ https://fare-evasion.chal.uiuc.tf/
 
 ### Solution
 
-The website seems to be a tutorial for downloading or obtain an extension to support github web pages
+The website is related to a transit system where you can enter as a passenger or as a conductor, but if we click in the "Im a passenger" button, we see this alert:
 
-![image](https://github.com/dachaparrop/WriteUps/assets/112051369/82f92d3a-fb17-4d20-a837-3f5d2aba8019)
+![image](https://github.com/dachaparrop/WriteUps/assets/112051369/d281b2db-f625-4067-b1d1-584b99e8f162)
 
-We see a button gets us the wrong flag:
+There are a lot of strange characters and a message.
 
-![image](https://github.com/dachaparrop/WriteUps/assets/112051369/e0b1de4c-07d1-4733-82cd-989dfae968f0)
+So we must try to do a bypass with the conductor rol to acces the website, now analysing the code source in the page, we see this comment:
 
-Doing hovering and seeing the source code on the page, we see that every extension have the same source code:
+![image](https://github.com/dachaparrop/WriteUps/assets/112051369/a1d3d9b2-0bde-4fb6-81f5-e3d89afe8659)
 
-![image](https://github.com/dachaparrop/WriteUps/assets/112051369/d344da46-f042-47a8-a16d-b9832e50d0af)
+With wappalyzer we can identify that the website is using Python as a programming language, and that is doing a wuery to an sqlite database.
 
-We don't see anything relevant, so we intercept the request in Burpsuit when clicking the button:
+Also, we can see that is requering the "headerKid", that can be a part of a JWT, so we have to intercept a request:
 
-![image](https://github.com/dachaparrop/WriteUps/assets/112051369/64ee3def-0c5d-42bd-b642-85e013795d0b)
 
-The request is doing a GET to a "DUMMY.txt" resource, and the button says "Fetch FLAG.txt", we could change the name of the resource:
-
-![image](https://github.com/dachaparrop/WriteUps/assets/112051369/44b13360-dc05-4669-ad98-140fe75cd9cc)
 
 And we got the flag
