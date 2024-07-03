@@ -1,6 +1,6 @@
 # [Fare Evasion] <ChallengeName>
 ## Author: Louis <AuthorName>
-### Points: 138 <points>
+### Points: 356 <points>
 
 ### Context
 
