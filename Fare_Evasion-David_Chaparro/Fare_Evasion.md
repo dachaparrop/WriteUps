@@ -13,7 +13,7 @@ https://fare-evasion.chal.uiuc.tf/
 
 The website is related to a transit system where you can enter as a passenger or as a conductor, but if we click in the "Im a passenger" button, we see this alert:
 
-![image](https://github.com/dachaparrop/WriteUps/assets/112051369/d281b2db-f625-4067-b1d1-584b99e8f162)
+![image](../assets/1.png)
 
 There are a lot of strange characters and a message telling us a "secret".
 
