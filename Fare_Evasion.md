@@ -41,4 +41,6 @@ Firstly, we try with different characters that can shows us a different error me
 
 ![image](https://github.com/dachaparrop/WriteUps/assets/112051369/bb83b87b-f79d-4f21-82da-c338435816ce)
 
+This error is caused in python, and trying more kind of payloads in the kid header, we don't get anything interesting.
 
+So, looking again in the source code, 
