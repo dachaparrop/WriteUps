@@ -43,4 +43,18 @@ Firstly, we try with different characters that can shows us a different error me
 
 This error is caused in python, and trying more kind of payloads in the kid header, we don't get anything interesting.
 
-So, looking again in the source code, 
+So, looking again in the source code, we see that the injection have to go through a md5 hashing. Searching vulnerabilities around the internet, we found this article:
+
+https://www.kristujayantijournal.com/index.php/ijcs/article/view/2185/1568
+
+That told us about a md5 vulnerabilitie with certain characters that produce a "or" string when hashing, so this can bypass the hsahing and produce a sql injection in this case.
+
+We try "DyrhGOYP0vxI2DtH8y" for payload in the request with the passanger secret:
+
+![image](https://github.com/dachaparrop/WriteUps/assets/112051369/978b9d8e-d46c-40bc-b8b6-151f9fd3b892)
+
+And we get a the secret for "conductor key", let's try out the request:
+
+![image](https://github.com/dachaparrop/WriteUps/assets/112051369/4313b466-7c7d-4d4c-899e-1b8cf062ffc2)
+
+Finally, we get the flag
