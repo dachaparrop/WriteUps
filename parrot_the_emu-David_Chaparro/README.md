@@ -25,7 +25,25 @@ The link shows us a web application where we can talk and the server answers the
 
 #### Step 2
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+With wappalyzer, we can see that the page is using python and is made in Flask, so after trying some XSS payloads, we try a SSTI attack and got this:
+
+![01](./assets/4.png)
+
+#### Step 3
+
+Now, looking in the files from the zip that the challenge gave us, we realize that the flag is in the web directory of the page:
+
+![01](./assets/5.png)
+
+#### Step 4
+
+So, we need to do a code injection that can gives us back the content of the flag file.
+
+Looking up online, we found a page telling us that there is a subclass that allows us to read and write files in the web server, but in order to do that, we have to know where is the class.
+
+We use the `__subclasses__()` method to find the correct classes that content the class we are looking for:
+
+
 
 ##### Code alt1
 
