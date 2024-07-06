@@ -78,13 +78,3 @@ Using a relative path, and this payload: `{{ ''.__class__.__mro__[1].__subclasse
 ![01](./assets/9.png)
 
 got us the flag!!
-
-##### Code alt1
-
-```javascript
-console.log("Example use alt1");
-```
-
-##### Code alt2
-
-Source code available on [script](./scripts/code.js)
