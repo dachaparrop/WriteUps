@@ -77,7 +77,7 @@ Using a relative path, and this payload: `{{ ''.__class__.__mro__[1].__subclasse
 
 ![01](./assets/9.png)
 
-We got it!
+got us the flag!!
 
 ##### Code alt1
 
