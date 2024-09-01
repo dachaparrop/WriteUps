@@ -1,5 +1,7 @@
 # WriteUps
 
+Here you can find all the writeups/documentation of the challenges and machines that I have made until now.
+
 ## 🐇 IMPORTANT 🐇
 
 >Some of the writeups are in English and others in Spanish
