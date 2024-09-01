@@ -2,14 +2,13 @@
 ## Author: David Chaparro - davidch09 <AuthorName>
 ## Points: 3 <points>
 
-#### Requirements (Not an expert, only knowing the concept)
+#### Requirements (Not an expert, only know the concept)
 
 ##### Topics
 + Cracking/Bruteforce passwords
 + Cryptography
 
 ##### Tools
-
 + zip2john
 + john
 
@@ -39,6 +38,8 @@ Now, let's try cracking the hash using a really good bruteforcing tool named `jo
 Nice!!, we got the zip's password, we can use it to extract the content:
 
 ![4](./assets/4.png)
+
+### Decrypting the content
 
 jeez, that looks like an encoded message, but the last `=` character can tell us is a **base 64** cipher, we are gonna use https://cyberchef.io/ to analyze it:
 

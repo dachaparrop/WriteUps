@@ -2,7 +2,7 @@
 ## Author: <AuthorName>
 ## Points: 100/100 <points>
 
-#### Requirements
+#### Requirements (Not an expert, only know the concept)
 
 ##### Topics
 + Topic 1
