@@ -1,4 +1,4 @@
-# [Dificulty] <ChallengeName>
+# [Dificulty] Challenge Name
 ## Author: <AuthorName>
 ### Points: <points>
 
