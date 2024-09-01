@@ -1,5 +1,5 @@
 # [Beginner] parrot the emu <ChallengeName>
-## Author: David Chaparro <AuthorName>
+## Author: David Chaparro - davidch09 <AuthorName>
 ### Points: 100<points>
 
 ### Context
