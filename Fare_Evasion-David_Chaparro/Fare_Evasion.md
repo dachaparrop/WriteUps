@@ -1,5 +1,5 @@
 # [Fare Evasion] <ChallengeName>
-## Author: Louis <AuthorName>
+## Author: David Chaparro - davidch09 <AuthorName>
 ### Points: 356 <points>
 
 ### Context
