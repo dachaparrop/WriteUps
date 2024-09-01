@@ -1,5 +1,5 @@
 # [Bad_Worker] <ChallengeName>
-## Author: kaki005 <AuthorName>
+## Author: David Chaparro - davidch09 <AuthorName>
 ### Points: 138 <points>
 
 ### Context
