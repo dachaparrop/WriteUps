@@ -13,9 +13,7 @@
 + gobuster
 
 ##### Languages / Ciphering
-+ 
-+ 
-
++ bash
 
 ## Solution
 
@@ -43,7 +41,16 @@ We see that a web service is running in the port `80` and a service named `plex`
 ```sh
 sudo nmap -p 22,53,80,1557,32400,32469 -Pn -sVC --min-rate 5000 -oN puertos.txt 10.129.231.219
 ```
-
+#### parameters explanation
++ -p- : Scans all possible ports (1 - 65535)
++ -sS : (stealth Scan) Sends SYN packets and waits for a response, it's faster and stealthier than a full TCP scan
++ -Pn : no `ping` command is performed, so the scan was doing without checking if the machine responds to ICMP pings
++ --min-rate 5000 : Sets a minimum rate of `5000` packets per second (the more packets, the faster, but noisier and more detectable)
++ -vvv : More verbosity, you can see the ports discovering in the process
++ -n : Skips DNS resolution, speeding up the scan
++ -oG puertos.txt : Saves the scan results in a grepable format (easy to filter and use the `grep` command) in the file `"puertos.txt"`
++ 
+  
 ```java
 PORT      STATE SERVICE VERSION
 22/tcp    open  ssh     OpenSSH 6.7p1 Debian 5+deb8u3 (protocol 2.0)
@@ -70,26 +77,67 @@ PORT      STATE SERVICE VERSION
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 ```
 
+
 ### Web enumeration
 
-Okay, after exploring the web services in both ports, we see that the one in the port `80` doesn't have anything (the main page is empty, but we can do directory/subdomain enumeration later) and the `Plex` service doesn't appear to be vulnerable, because after sign in and see the version of the service, we can check it out using `searchsploit`:  
-
-
+Okay, after exploring the web services in both ports, we see that the one in the port `80` doesn't have anything (the main page is empty, but we can do directory/subdomain enumeration later) and in the `Plex` , because after sign in, we can see the version of the service: 
 
 ![1](./assets/1.png)
 
+And after using `searchsploit`, it doesn't appear to be vulnerable:  
+
+![2](./assets/2.png)
+
+Now let's do a directory discovery with the tool `gobuster`, we start with the port `80` (it's the default one, so we don't have to specify the `:80` after the ip):
+
+```sh
+gobuster dir -u http://ipExample -w /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt -o fuzzWebDir.txt -t 50 
+```
 #### parameters explanation
++ dir : This is the option to execute a `direction discovery` in `gobuster`
++ -u : Sets the ip of the we service
++ -w : Sets the wordlist dictionary to use in the bruteforcing process
++ -o : Save the content of the directory discovery
++ -t : Number of current threads the process will use (default: 10)
 
-+ -p- : Scans all possible ports (1 - 65535)
-+ -sS : (stealth Scan) Sends 
+![4](./assets/4.png)
 
-jeez, that looks like an encoded message, but the last `=` character can tell us is a **base 64** cipher, we are gonna use https://cyberchef.io/ to analyze it:
+After discovering the `/admin` directory, where we find a login for the service `Pi-hole`, we could try a simple thing, looking for default credentials online, but after trying different passwords for the login that didn't work, we find credentials for a ssh login:
+
+![3](./assets/3.png)
+
+Let's try it:
 
 ![5](./assets/5.png)
 
-This looks like **binary** code, after decoding it from binary, we get our precious flag:
+
+And we are in!!, now we can see the user flag in `/home/pi/Desktop/user.txt` and sanitize the terminal (You can learn how to do it here 🐇: https://uqbarun.github.io/blog/fundamentos/2023/11/19/sanitizacion-de-tty-por-conexion-remota)
+
+### Privileged escalation / Linux enumeration
+
+Now we have to escalate privileges in order to be root, let's start with a simple enumeration with `sudo -l`:
 
 ![6](./assets/6.png)
+
+wut? Apparently we can execute any commands with sudo, so we can use `sudo su` to become **root**:
+
+![7](./assets/7.png)
+
+It's not that easy uh? They gave us a hint though, in Linux we can verify devices with storage with the command `df`, also we can use `mount` (with this one we have to grep to reduce content, like this: `mount | grep "usb"`):
+
+![8](./assets/8.png)
+
+Inside the `/media/usbstick/` we can see the `"damnit.txt"` file:
+
+![9](./assets/9.png)
+
+He deleted it? Let's see the content inside `/dev/sdb` (we must use the command `strings`, because with `cat` the content is not printed human-readable)
+
+![10](./assets/10.png)
+
+And we got the flag!! 🐇
+
+
 
 
 

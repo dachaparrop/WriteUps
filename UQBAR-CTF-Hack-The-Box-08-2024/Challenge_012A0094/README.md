@@ -45,7 +45,7 @@ jeez, that looks like an encoded message, but the last `=` character can tell us
 
 ![5](./assets/5.png)
 
-This looks like **binary** code, after decoding it from binary, we get our precious flag:
+This looks like **binary** code, after decoding it from binary, we get our precious flag 🐇:
 
 ![6](./assets/6.png)
 
