@@ -1,6 +1,6 @@
 # WriteUps
 
-Here you can find all the writeups/documentation of the challenges and machines that I have made until now.
+Here you can find all the writeups/documentation of the challenges and machines that I have done until now.
 
 ## 🐇 IMPORTANT 🐇
 
@@ -20,5 +20,7 @@ List of events and CTF's
 | :------------------ | :---------------------------------------- |
 | Preparation  for ICC   | [Go to](./ICC)                  |
 | UQBAR CTF HTB 08-2024  | [Go to](./UQBAR-CTF-Hack-The-Box-08-2024)  |
+| HTB Challenges   | [Go to](./HTB-Challenges)                  |
+| HTB Machines   | [Go to](./HTB-Machines)                  |
 
 ---
