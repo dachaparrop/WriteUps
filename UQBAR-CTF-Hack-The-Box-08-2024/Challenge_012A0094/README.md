@@ -2,7 +2,7 @@
 ## Author: David Chaparro - davidch09 <AuthorName>
 ## Points: 3 <points>
 
-#### Requirements (Not an expert, only know the concept)
+#### Requirements (Don't have to be an expert, just need to know the concept)
 
 ##### Topics
 + Cracking/Bruteforce passwords

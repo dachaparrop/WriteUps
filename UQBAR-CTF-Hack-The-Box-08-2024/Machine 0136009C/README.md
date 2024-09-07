@@ -2,7 +2,7 @@
 ## Author: David Chaparro - davidch09
 ## Points: User flag: 10 - System flag: 20
 
-#### Requirements (Not an expert, only know the concept)
+#### Requirements (Don't have to be an expert, just need to know the concept)
 
 ##### Topics
 + Linux

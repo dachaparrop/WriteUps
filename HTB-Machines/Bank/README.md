@@ -1,7 +1,7 @@
 # (Linux) [Easy] Bank
 ## Author: David Chaparro - davidch09
 
-#### Requirements (Not an expert, only know the concept)
+#### Requirements (Don't have to be an expert, just need to know the concept)
 
 ##### Topics
 + Linux
