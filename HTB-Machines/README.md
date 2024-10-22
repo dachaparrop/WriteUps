@@ -9,6 +9,6 @@ Here you can find all the writeups/documentation of the machines I have done fro
 | Bank    | Linux | Easy       | [Go to](./Bank/README.md)                 |
 | GreenHorn | Linux | Easy     | [Go to](./GreenHorn/README.md)            |
 | Heist   | Windows | Easy     | [Go to](./Heist/README.md)                |
-
+| Cicada  | Windows | Easy     | [Go to](./Cicada/README.md)               |
 
 ---
